@@ -15,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -84,6 +85,26 @@
 
 
         </nav>
+        <div class="for mobile lg:hidden">
+            <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full p-2 bg-white shadow-lg flex justify-around items-center rounded-t-2xl">
+                <!-- Home -->
+                <a href="../index.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-home text-base mb-1"></i>
+                  <span class="text-sm">হোম</span> 
+                </a>
+                <!-- Varsity Admission -->
+                <a href="varsity.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-graduation-cap text-base mb-1"></i>
+                  <span class="text-sm">ভার্সিটি এডমিশন</span>
+                </a>
+                <!-- Medical Admission -->
+                <a href="Medical/medical.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-hospital text-base mb-1"></i>
+                  <span class="text-sm">মেডিকেল এডমিশন</span>
+                </a>
+            </div>
+
+           </div>
     </header>
 
     <!-- Main Content -->
