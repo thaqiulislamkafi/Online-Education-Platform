@@ -1,189 +1,520 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABAS Online School</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        accentcolor: '#179800',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-hind-siliguri {
+            font-family: "Hind Siliguri", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
 </head>
 
-<body class="hind-siliguri-font">
+<body class="font-['Hind_Siliguri'] bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50">
+        <nav
+            class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none">
+            <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
+                <div class="navbar bg-base-100 px-0 flex items-center">
+                    <div class="navbar-start mx-0 ">
+                        <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[130px] h-auto"
+                                src="Resources/Logo.png" alt=""></a>
+                    </div>
+                    <div class="navbar-center hidden lg:flex lg:mt-2">
+                        <ul class="menu menu-horizontal px-1 text-lg">
+                            <li><a href="index.html">হোম</a></li>
+                            <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
+                            <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
+                            <li> <a href="">এক্সাম ব্যাচ</a></li>
+                        </ul>
+                    </div>
 
-    <!-- ........... Banner Section Updated............ -->
-    <header>
+                    <div class="hidden lg:flex navbar-end ">
 
-        <nav>
-            <div class="navbar">
-                <div class="logo">
-                    <h5><span>S</span>ABAS <br> School</h5>
+                        <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
 
+                        <div class="button flex gap-2">
+                            <button class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor  "><a
+                                    class=" text-black min-h-0">লগ ইন</a></button>
+                            <button
+                                class="border-2 border-accentcolor  bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white "><a
+                                    class="   min-h-0 ">রেজিস্টার</a></button>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="menubar">
-                    <ul>
-                        <li><a href="indexx.html">হোম</a></li>
-                        <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
-                        <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
-                        <li> <a href="">এক্সাম ব্যাচ</a></li>
-                    </ul>
-                    <button class="btn"><a href="">লগ ইন</a></button>
+                <div class="toogle  lg:hidden">
+                    <img src="c2-assets/bars-3.png" alt="">
                 </div>
             </div>
+
 
         </nav>
-
-        <div class="banner">
-            <img src="Resources/banner.jpg" alt="">
-        </div>
-
     </header>
-    <main>
 
-        <!-- ........... Intermidiate Section Updated ............ -->
+    <!-- Main Content -->
+    <main class="mt-24">
+        <!-- Varsity Admission Section -->
+        <section class=" py-24">
+            <div class="w-[83.94vw] mx-auto mt-2">
+                <h2 class="text-4xl text-center font-bold mb-12">Varsity Admission - 2024</h2>
 
-        <section class="Intermidiate">
+                <!-- Grid for Courses -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
+                    <!-- Course 1 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/DU-A(Full).jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2 ">Sarowar Jahan Shawon</p>
 
-            <p class="title">
-                এইচ এস সি পরীক্ষার্থীদের জন্য <br> অনলাইন ব্যাচ
-            </p>
-            <div class="course-container">
-                <div class="course">
-                    <img src="Resources/inter_1.jpg" alt="">
-                    <p>HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স প্রথম পত্র)</p>
-                    <h6>৫৫০০ টাকা</h6>
+                            <div class="space-y-1 text-black">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
 
-                </div>
-                <div class="course">
-                    <img src="Resources/inter_2.jpg" alt="">
-                    <p>HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স দ্বিতীয় পত্র)</p>
-                    <h6>৫০০০ টাকা</h6>
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
-                </div>
-                <div class="course">
-                    <img src="Resources/inter_1.jpg" alt="">
-                    <p>HSC 26 অনলাইন ব্যাচ<br>(কেমিস্ট্রি প্রথম পত্র)</p>
-                    <h6>৬৫০০ টাকা</h6>
+                    <!-- Course 2 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/DU-A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Written Preparation</h6>
+                            <p class="text-gray-600 mb-2">Abhi Dutta Tushar</p>
 
-                </div>
-                <div class="course">
-                    <img src="Resources/inter_2.jpg" alt="">
-                    <p>HSC 26 অনলাইন ব্যাচ <br>(কেমিস্ট্রি দ্বিতীয় পত্র)
-                    <p>
-                    <h6>৬০০০ টাকা</h6>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
 
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Guccho A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">GST A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Abdul Hannan Masud</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 4 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Hasnat Abdullah</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 5 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Najmul Hasan Sakib</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 6 -->
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Chowdhury Rakib</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ........... Admission Section Updated ............ -->
-
-        <section class="admission-section-container">
-            <div class="admission-section">
-                <div class="Mini-title">
-                    <img src="Resources/book-reader.svg" alt="">
-                    <p>ভর্তি পরীক্ষা</p>
-                </div>
-                <p class="admission-title">এডমিশন সেশন - ২০২৪</p>
-                <div class="admission-container">
-                    <div class="admission">
-                        <img src="Resources/DU-A.jpg" alt="">
-                        <h6>ঢাবি ভর্তি প্রস্তুতি</h6>
-                        <p>সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar">
-                            <p>বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="">
-
+        <section class="Succeed Student">
+            
+            <div class="table-container w-[83.94vw]  mx-auto">
+                <p class="text-center font-bold text-2xl lg:text-4xl text-accentcolor my-14">বিগত বছরে চান্সপ্রাপ্ত শিক্ষার্থীসমূহ</p>
+                <div class="pb-20 font-['Work_Sans']">
+                    <div class="overflow-x-auto ">
+                        <!-- Table Container with Fixed Height and Y-Axis Scroll -->
+                        <div class="h-[400px] overflow-y-auto">
+                          <table class="table table-zebra">
+                            <!-- Table Head -->
+                            <thead>
+                              <tr class="">
+                                <th class="text-lg font-bold sticky top-0 bg-base-200">Roll Number</th>
+                                <th class="text-lg font-bold sticky top-0 bg-base-200">Name</th>
+                                <th class="text-lg font-bold sticky top-0 bg-base-200">Address</th>
+                              </tr>
+                            </thead>
+                            <!-- Table Body -->
+                            <tbody>
+                              <!-- Rows 1 to 20 -->
+                              <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>123 Main St, Cityville</td>
+                              </tr>
+                              <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>456 Elm St, Townsville</td>
+                              </tr>
+                              <tr>
+                                <td>3</td>
+                                <td>Alice Johnson</td>
+                                <td>789 Oak St, Villageton</td>
+                              </tr>
+                              <tr>
+                                <td>4</td>
+                                <td>Bob Brown</td>
+                                <td>321 Pine St, Hamletville</td>
+                              </tr>
+                              <tr>
+                                <td>5</td>
+                                <td>Charlie Davis</td>
+                                <td>654 Maple St, Countryside</td>
+                              </tr>
+                              <tr>
+                                <td>6</td>
+                                <td>Eve Wilson</td>
+                                <td>987 Cedar St, Suburbia</td>
+                              </tr>
+                              <tr>
+                                <td>7</td>
+                                <td>Frank Moore</td>
+                                <td>135 Birch St, Uptown</td>
+                              </tr>
+                              <tr>
+                                <td>8</td>
+                                <td>Grace Taylor</td>
+                                <td>246 Walnut St, Downtown</td>
+                              </tr>
+                              <tr>
+                                <td>9</td>
+                                <td>Hank Anderson</td>
+                                <td>357 Cherry St, Midtown</td>
+                              </tr>
+                              <tr>
+                                <td>10</td>
+                                <td>Ivy Martinez</td>
+                                <td>468 Peach St, Riverside</td>
+                              </tr>
+                              <tr>
+                                <td>11</td>
+                                <td>Jack White</td>
+                                <td>579 Apple St, Lakeside</td>
+                              </tr>
+                              <tr>
+                                <td>12</td>
+                                <td>Karen Harris</td>
+                                <td>680 Orange St, Hillside</td>
+                              </tr>
+                              <tr>
+                                <td>13</td>
+                                <td>Leo Clark</td>
+                                <td>791 Banana St, Mountainside</td>
+                              </tr>
+                              <tr>
+                                <td>14</td>
+                                <td>Mia Lewis</td>
+                                <td>802 Grape St, Beachtown</td>
+                              </tr>
+                              <tr>
+                                <td>15</td>
+                                <td>Nina Walker</td>
+                                <td>913 Lemon St, Forestville</td>
+                              </tr>
+                              <tr>
+                                <td>16</td>
+                                <td>Oscar Hall</td>
+                                <td>124 Lime St, Desertville</td>
+                              </tr>
+                              <tr>
+                                <td>17</td>
+                                <td>Paul Young</td>
+                                <td>235 Mango St, Snowtown</td>
+                              </tr>
+                              <tr>
+                                <td>18</td>
+                                <td>Quincy King</td>
+                                <td>346 Papaya St, Rainville</td>
+                              </tr>
+                              <tr>
+                                <td>19</td>
+                                <td>Rachel Scott</td>
+                                <td>457 Berry St, Sunville</td>
+                              </tr>
+                              <tr>
+                                <td>20</td>
+                                <td>Steve Green</td>
+                                <td>568 Kiwi St, Moonville</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
-
-                    </div>
-                    <div class="admission">
-                        <img src="Resources/Guccho A.jpg" alt="">
-                        <h6>গুচ্ছ ভর্তি প্রস্তুতি</h6>
-                        <p>সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar">
-                            <p>বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="">
-
-                        </div>
-                    </div>
-                    <div class="admission">
-                        <img src="Resources/Medical Admission.jpeg" alt="">
-                        <h6>মেডিকেল ভর্তি প্রস্তুতি</h6>
-                        <p>সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar">
-                            <p>বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="">
-
-                        </div>
-
-                    </div>
-                    <div class="admission">
-                        <img src="Resources/Versity A.jpg" alt="">
-                        <h6>ভার্সিটি ভর্তি প্রস্তুতি</h6>
-                        <p>সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar">
-                            <p>বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="">
-
-                        </div>
-
-                    </div>
-                </div>
+                      </div>
+                    
             </div>
 
         </section>
+        
+        
     </main>
-    <footer>
-        <section class="footer-container">
-            <div class="footer">
-                <div class="courses">
-                    <p>কোর্সসমূহ</p>
-                    <ul>
-                        <li><a href="">মেডিকেল ভর্তি পরীক্ষা প্রস্তুতি</a></li>
-                        <li><a href="">ভার্সিটি ভর্তি পরীক্ষা প্রস্তুতি</a></li>
-                        <li><a href="">অনলাইন এক্সাম ব্যাচ</a></li>
-        
-                    </ul>
-            
-                  </div>
-                <div class="company">
-                    <p>কোম্পানি</p>
-                    <ul>
-                        <li><a href="">শিক্ষক হিসাবে যোগ দিন</a></li>
-                        <li><a href="">নিয়োগ বিজ্ঞপ্তি</a></li>
-                        <li><a href="">ব্লগ</a></li>
-        
-                    </ul>
-            
-                  </div>
-                  <div class="policies">
-                    <p>পলিসিসমূহ</p> 
-                    <ul>
-                        <li><a href="">প্রাইভেসি পলিসি</a></li>
-                        <li><a href="">রিফান্ড পলিসি</a></li>
-                        <li><a href="">ব্যবহারকারীর শর্তাবলি</a></li>
-                    </ul>
-            
-                  </div>
-                  <div class="contacts">
-                    <p>যোগাযোগ</p> 
-                    <ul>
-                        <li>হোয়াটসআপঃ  +8801813694582</li>
-                        <li>কল করুনঃ +8801813694582</a></li>
-                        <li>ইমেইলঃ @support.sabasonlineschool.com</li>
-                    </ul>
-            
-                  </div>
-        
-             </div>
-             <div class="icons">
-                <img src="Resources/boxicons-2.1.4-SVG-24/facebook-circle.png" alt="">
-                <img src="Resources/boxicons-2.1.4-SVG-24/instagram-alt.png" alt="">
-                <img src="Resources/boxicons-2.1.4-SVG-24/twitter.png" alt="">
-                <img src="Resources/boxicons-2.1.4-SVG-24/youtube-logo-24.png" alt="">
-              </div>
-        </section>
 
+
+    <!-- Footer -->
+    <footer class="mt-10 bg-accentcolor">
+        <section class="footer-container container w-[83.94vw] mx-auto py-12 sm:py-20 text-white">
+            <div class="footer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 gap-12">
+                <!-- Courses -->
+                <!-- <div class="courses">
+                    <p class="text-lg font-medium underline mb-4">কোর্সসমূহ</p>
+                    <ul class="text-base">
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">মেডিকেল ভর্তি পরীক্ষা প্রস্তুতি</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">ভার্সিটি ভর্তি পরীক্ষা প্রস্তুতি</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">অনলাইন এক্সাম ব্যাচ</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- Company -->
+                <div class="company ">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">কোম্পানি</p>
+                    <ul class="text-base lg:text-lg ">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">শিক্ষক হিসাবে যোগ দিন</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">নিয়োগ বিজ্ঞপ্তি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্লগ</a></li>
+                    </ul>
+                </div>
+                <!-- Policies -->
+                <div class="policies">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">পলিসিসমূহ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">রিফান্ড পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্যবহারকারীর শর্তাবলি</a></li>
+                    </ul>
+                </div>
+                <!-- Contacts -->
+                <div class="contacts">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">যোগাযোগ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li class="text-gray-100">হোয়াটসআপঃ +8801813694582</li>
+                        <li class="text-gray-100">কল করুনঃ +8801813694582</li>
+                        <li class="text-gray-100">ইমেইলঃ @support.sabasonlineschool.com</li>
+                    </ul>
+                    <div class="icons flex justify-center gap-5 mt-2">
+                        <img src="Resources/boxicons-2.1.4-SVG-24/facebook-circle.png" alt="Facebook Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="Resources/boxicons-2.1.4-SVG-24/instagram-alt.png" alt="Instagram Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="Resources/boxicons-2.1.4-SVG-24/twitter.png" alt="Twitter Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="Resources/boxicons-2.1.4-SVG-24/youtube-logo-24.png" alt="YouTube Icon"
+                            class="w-6 h-6 cursor-pointer ">
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </footer>
 </body>
 
