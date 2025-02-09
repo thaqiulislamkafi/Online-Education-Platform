@@ -40,50 +40,90 @@
 <body class="font-['Hind_Siliguri'] bg-gray-50">
     <!-- Header -->
     <header class="fixed w-full top-0 z-50">
-        <nav
-            class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none">
-            <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
-                <div class="navbar bg-base-100 px-0 flex items-center">
-                    <div class="navbar-start mx-0 ">
-                        <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[130px] h-auto"
-                                src="Resources/Logo.png" alt=""></a>
-                    </div>
-                    <div class="navbar-center hidden lg:flex lg:mt-2">
-                        <ul class="menu menu-horizontal px-1 text-lg">
-                            <li><a href="index.html">হোম</a></li>
-                            <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
-                            <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
-                            <li> <a href="">এক্সাম ব্যাচ</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="hidden lg:flex navbar-end ">
-
-                        <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
-
-                        <div class="button flex gap-2">
-                            <button class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor  "><a
-                                    class=" text-black min-h-0">লগ ইন</a></button>
-                            <button
-                                class="border-2 border-accentcolor  bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white "><a
-                                    class="   min-h-0 ">রেজিস্টার</a></button>
-                        </div>
-
-                    </div>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
                 </div>
-                <div class="toogle  lg:hidden">
-                    <img src="c2-assets/bars-3.png" alt="">
-                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                  <li><a>Item 1</a></li>
+                  <li>
+                    <a>Parent</a>
+                    <ul class="p-2">
+                      <li><a>Submenu 1</a></li>
+                      <li><a>Submenu 2</a></li>
+                    </ul>
+                  </li>
+                  <li><a>Item 3</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost text-xl">daisyUI</a>
             </div>
-
-
-        </nav>
+            <div class="navbar-center hidden lg:flex">
+              <ul class="menu menu-horizontal px-1">
+                <li><a>Item 1</a></li>
+                <li>
+                  <details>
+                    <summary>Parent</summary>
+                    <ul class="p-2">
+                      <li><a>Submenu 1</a></li>
+                      <li><a>Submenu 2</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a>Item 3</a></li>
+              </ul>
+            </div>
+            <div class="navbar-end">
+              <a class="btn">Button</a>
+            </div>
+          </div>
+          <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottom Navbar with Tailwind CSS</title>
+  <!-- Include Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100">
+  <!-- Bottom Navbar -->
+  <nav class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[83.94vw] p-7 bg-white shadow-lg flex justify-around items-center rounded-t-2xl">
+    <!-- Home -->
+    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
+      <i class="fas fa-home text-2xl mb-1"></i>
+      <span class="text-sm">Home</span>
+    </a>
+    <!-- Varsity Admission -->
+    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
+      <i class="fas fa-graduation-cap text-2xl mb-1"></i>
+      <span class="text-sm">Varsity Admission</span>
+    </a>
+    <!-- Medical Admission -->
+    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
+      <i class="fas fa-hospital text-2xl mb-1"></i>
+      <span class="text-sm">Medical Admission</span>
+    </a>
+  </nav>
+</body>
+</html>
     </header>
 
     <!-- Main Content -->
