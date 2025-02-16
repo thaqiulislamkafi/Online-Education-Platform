@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register - SABAS Online School</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+         .font-hind-siliguri {
+            font-family: "Hind Siliguri", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        /* Custom fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Custom glow effect for focus */
+        .glow-effect:focus {
+            /* box-shadow: 0 0 0 3px rgba(23, 152, 3, 0.3); */
+        }
+    </style>
+
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            accentcolor: '#179800',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 font-hind-siliguri">
+    <!-- Login and Register Section -->
+    <section class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden animate-fadeIn">
+            <!-- Tabs for Login and Register -->
+            <div class="flex">
+                <button id="login-tab" class="flex-1 py-4 text-center text-lg font-semibold text-white bg-bg-green-600 hover:bg-green-700 transition-colors duration-300">
+                    <i class="fas fa-sign-in-alt mr-2"></i>লগ ইন
+                </button>
+                <button id="register-tab" class="flex-1 py-4 text-center text-lg font-semibold text-gray-700 bg-gray-200 hover:bg-gray-300 transition-colors duration-300">
+                    <i class="fas fa-user-plus mr-2"></i>রেজিস্টার
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="p-8 space-y-6">
+                <div class="space-y-4">
+                    <div class="flex items-center border-2 border-gray-300 rounded-lg p-3 focus-within:border-green-600 transition-colors duration-300">
+                        <i class="fas fa-envelope text-gray-500 mr-2"></i>
+                        <input type="email" id="login-email" name="login-email" class="w-full focus:outline-none glow-effect" placeholder="ইমেইল" required>
+                    </div>
+                    <div class="flex items-center border-2 border-gray-300 rounded-lg p-3 focus-within:border-green-600 transition-colors duration-300">
+                        <i class="fas fa-lock text-gray-500 mr-2"></i>
+                        <input type="password" id="login-password" name="login-password" class="w-full focus:outline-none glow-effect" placeholder="পাসওয়ার্ড" required>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 transform hover:scale-105">
+                    লগ ইন
+                </button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="p-8 space-y-6 hidden">
+                <div class="space-y-4">
+                    <div class="flex items-center border-2 border-gray-300 rounded-lg p-3 focus-within:border-green-600 transition-colors duration-300">
+                        <i class="fas fa-user text-gray-500 mr-2"></i>
+                        <input type="text" id="register-name" name="register-name" class="w-full focus:outline-none glow-effect" placeholder="নাম" required>
+                    </div>
+                    <div class="flex items-center border-2 border-gray-300 rounded-lg p-3 focus-within:border-green-600 transition-colors duration-300">
+                        <i class="fas fa-envelope text-gray-500 mr-2"></i>
+                        <input type="email" id="register-email" name="register-email" class="w-full focus:outline-none glow-effect" placeholder="ইমেইল" required>
+                    </div>
+                    <div class="flex items-center border-2 border-gray-300 rounded-lg p-3 focus-within:border-green-600 transition-colors duration-300">
+                        <i class="fas fa-lock text-gray-500 mr-2"></i>
+                        <input type="password" id="register-password" name="register-password" class="w-full focus:outline-none glow-effect" placeholder="পাসওয়ার্ড" required>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors duration-300 transform hover:scale-105">
+                    রেজিস্টার
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Toggle between Login and Register forms
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+
+        loginTab.addEventListener('click', () => {
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+            loginTab.classList.remove('bg-gray-200', 'text-gray-700');
+            loginTab.classList.add('bg-green-600', 'text-white');
+            registerTab.classList.remove('bg-green-600', 'text-white');
+            registerTab.classList.add('bg-gray-200', 'text-gray-700');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+            registerTab.classList.remove('bg-gray-200', 'text-gray-700');
+            registerTab.classList.add('bg-green-600', 'text-white');
+            loginTab.classList.remove('bg-green-600', 'text-white');
+            loginTab.classList.add('bg-gray-200', 'text-gray-700');
+        });
+
+        // Handle Login Form Submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            // Simulate a successful login
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'dashboard.html'; // Redirect to dashboard
+        });
+
+        // Handle Register Form Submission
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+
+            // Simulate a successful registration
+            alert('রেজিস্ট্রেশন সফল! এখন লগ ইন করুন।');
+            loginTab.click(); // Switch to login form
+        });
+    </script>
+</body>
+</html>
