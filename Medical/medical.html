@@ -1,209 +1,441 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Batch</title>
-    <link rel="stylesheet" href="medical.css">
+    <title>SABAS Online School</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                    accentcolor: '#179800',
+                  }
+                }
+              }
+            }
+          </script>
+    <style>
+
+        .font-hind-siliguri {
+            font-family: "Hind Siliguri", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            margin-right: 1rem;
+        }
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none; 
+        }
+        .carousel-navigation button {
+            pointer-events: all; 
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .carousel-navigation button:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    </style>
 </head>
 
-<body class="hind-siliguri-font">
+<body class="font-hind-siliguri">
+    <!-- Header Section -->
     <header>
-        <nav>
-            <div class="navbar">
-                <div class="logo">
-                    <h5><span>S</span>ABAS <br> School</h5>
-
-                </div>
-                <div class="menubar">
-                    <ul>
-                        <li><a href="../index.html">হোম</a></li>
-                        <li><a href="">মেডিকেল ব্যাচ</a></li>
+        <!-- Navbar -->
+         
+        <nav class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none transition-all duration-300 hover:shadow-lg lg:border-none">
+            <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
+             <div class="navbar bg-base-100 px-0 flex items-center">
+               <div class="navbar-start mx-0 ">
+                <!-- <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Item 1</a></li>
+                      <li>
+                        <a>Parent</a>
+                        <ul class="p-2">
+                          <li><a>Submenu 1</a></li>
+                          <li><a>Submenu 2</a></li>
+                        </ul>
+                      </li>
+                      <li><a>Item 3</a></li>
+                    </ul>
+                  </div> -->
+                 <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[130px] h-auto" src="../Resources/Logo.png"
+                     alt=""></a>
+               </div>
+               <div class="navbar-center hidden lg:flex lg:mt-2">
+                 <ul class="menu menu-horizontal px-1 text-lg">
+                    <li><a href="../index.html">হোম</a></li>
+                        <li><a href="medical.html">মেডিকেল ব্যাচ</a></li>
                         <li><a href="../Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
                         <li> <a href="">এক্সাম ব্যাচ</a></li>
-                    </ul>
-                    <button class="btn"><a href="">লগ ইন</a></button>
-                </div>
+                 </ul>
+               </div>
+       
+               <div class="hidden lg:flex navbar-end ">
+       
+                 <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                   </svg>
+                 </button>
+       
+                 <div class="button flex gap-2">
+                  <a class=" text-black min-h-0 hover:text-white" href="login.html"><button class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor  " >লগ ইন</button></a>
+                   <button class="border-2 border-accentcolor  bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white "><a
+                       class="   min-h-0 ">রেজিস্টার</a></button>
+                 </div>
+                 
+                 </div>
+               </div>
+               <div class="toogle  lg:hidden">
+                 <img src="c2-assets/bars-3.png" alt="">
+            </div>
+            </div>
+            
+       
+           </nav>
+
+           <div class="for mobile lg:hidden">
+            <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full p-2 bg-white shadow-lg flex justify-around items-center rounded-t-2xl">
+                <!-- Home -->
+                <a href="#" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-home text-base mb-1"></i>
+                  <span class="text-sm">হোম</span> 
+                </a>
+                <!-- Varsity Admission -->
+                <a href="Varsity/varsity.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-graduation-cap text-base mb-1"></i>
+                  <span class="text-sm">ভার্সিটি এডমিশন</span>
+                </a>
+                <!-- Medical Admission -->
+                <a href="Medical/medical.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                  <i class="fas fa-hospital text-base mb-1"></i>
+                  <span class="text-sm">মেডিকেল এডমিশন</span>
+                </a>
             </div>
 
-        </nav>
+           </div>
     </header>
     <main>
-        <section class="medical-admission-container">
-            <h2>Medical Admission - 2024</h2>
-            <div class="medical-admission">
+        <section class=" py-24">
+            <div class="w-[83.94vw] mx-auto mt-2">
+                <h2 class="mt-20 text-4xl text-center font-bold mb-12">Medical Admission - 2024</h2>
+
+                <!-- Courses Conatiner -->
+            <div class=" relative">
+                <div class="course-container carousel-container flex gap-1 text-black">
+                    <!-- Course 1 -->
+                    <div class="carousel-item">
+                        <div
+                        class="bg-white border-2 border-gray-100 rounded-xl  hover:border-green-400 transition-all ">
+                        <img src="../Resources/DU-A(Full).jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2 ">Sarowar Jahan Shawon</p>
+
+                            <div class="space-y-1 text-black">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- Course 2 -->
+
+                    <div class="carousel-item">
+                        <div
+                        class="bg-white border-2 border-gray-100 rounded-xl  hover:border-green-400 transition-all">
+                        <img src="../Resources/DU-A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Written Preparation</h6>
+                            <p class="text-gray-600 mb-2">Abhi Dutta Tushar</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
                 
-                <div class="medical-exam">
-                    
-                    <img src="../Resources/DU-A(Full).jpg" alt="">
-                    <h6>Medical Full Batch</h6>
-                    <p class="Instructor">Sarowar Jahan Shawon</p>
-                    <div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>মোট ৮০+ ক্লাস</p>
+                    <!-- Course 3 -->
 
-                        </div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p><img src="" alt="">
-                        </div>
+                    <div class="carousel-item">
+                        <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Guccho A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">GST A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Abdul Hannan Masud</p>
 
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>টপিক্স ভিত্তিক পিডিএফ</p><img src="" alt="">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
 
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="varsity-admission-button">
-                        <button>বিস্তারিত</button>
-                        <button>এনরোল</button>
                     </div>
 
+                    <!-- Course 6 -->
+
+                    <div class="carousel-item">
+                        <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
+                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
+                            <p class="text-gray-600 mb-2">Chowdhury Rakib</p>
+
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>মোট ১২০+ ক্লাস</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
+                                        class="w-4 h-4">
+                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between mt-4">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                   
                 </div>
-                <div class="medical-exam">
-                    <img src="../Resources/DU-A(Full).jpg" alt="">
-                    <h6>Medical 2nd Time Batch</h6>
-                    <p class="Instructor">Salsabil Arabi Nova</p>
-                    <div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>মোট ৭০+ ক্লাস</p>
-
-                        </div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p><img src="" alt="">
-                        </div>
-
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>টপিক্স ভিত্তিক পিডিএফ</p><img src="" alt="">
-
-                        </div>
-                    </div>
-
-                    <div class="varsity-admission-button">
-                        <button>বিস্তারিত</button>
-                        <button>এনরোল</button>
-                    </div>
-
-                </div>
-                <div class="medical-exam">
-                    <img src="../Resources/DU-A(Full).jpg" alt="">
-                    <h6>Medi GK-English Batch</h6>
-                    <p class="Instructor">Shahidur Rahman</p>
-                    <div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>মোট ৮৫+ ক্লাস</p>
-
-                        </div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p><img src="" alt="">
-                        </div>
-
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>টপিক্স ভিত্তিক পিডিএফ</p><img src="" alt="">
-
-                        </div>
-                    </div>
-
-                    <div class="varsity-admission-button">
-                        <button>বিস্তারিত</button>
-                        <button>এনরোল</button>
-                    </div>
-
-                </div>
-                <div class="medical-exam">
-                    <img src="../Resources/DU-A(Full).jpg" alt="">
-                    <h6>Medical Revision Batch</h6>
-                    <p class="Instructor">Amir Hamja Rafi</p>
-                    <div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>মোট ৭৫০+ ক্লাস</p>
-
-                        </div>
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p><img src="" alt="">
-                        </div>
-
-                        <div class="parameters">
-                            <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png" alt="">
-                            <p>টপিক্স ভিত্তিক পিডিএফ</p><img src="" alt="">
-
-                        </div>
-                    </div>
-
-                    <div class="varsity-admission-button">
-                        <button>বিস্তারিত</button>
-                        <button>এনরোল</button>
-                    </div>
-
+                <div class="carousel-navigation">
+                    <button id="prevButton" class="">❮</button>
+                    <button id="nextButton" class="">❯</button>
                 </div>
 
             </div>
-
+            
+                
+            </div>
+            
+               
+            
         </section>
+        <script>
+            const carouselContainer = document.querySelector('.carousel-container');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+    
+            prevButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+    
+            nextButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        </script>
+        
 
     </main>
-    <footer>
-        <section class="footer-container">
-            <div class="footer">
-                <div class="courses">
-                    <p>কোর্সসমূহ</p>
-                    <ul>
-                        <li><a href="">মেডিকেল ভর্তি পরীক্ষা প্রস্তুতি</a></li>
-                        <li><a href="">ভার্সিটি ভর্তি পরীক্ষা প্রস্তুতি</a></li>
-                        <li><a href="">অনলাইন এক্সাম ব্যাচ</a></li>
-        
+    <footer class="mt-10 bg-accentcolor">
+        <section class="footer-container container w-[83.94vw] mx-auto py-12 sm:py-20 text-white">
+            <div class="footer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 gap-12">
+                <!-- Courses -->
+                <!-- <div class="courses">
+                    <p class="text-lg font-medium underline mb-4">কোর্সসমূহ</p>
+                    <ul class="text-base">
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">মেডিকেল ভর্তি পরীক্ষা প্রস্তুতি</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">ভার্সিটি ভর্তি পরীক্ষা প্রস্তুতি</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-green-600">অনলাইন এক্সাম ব্যাচ</a></li>
                     </ul>
-            
-                  </div>
-                <div class="company">
-                    <p>কোম্পানি</p>
-                    <ul>
-                        <li><a href="">শিক্ষক হিসাবে যোগ দিন</a></li>
-                        <li><a href="">নিয়োগ বিজ্ঞপ্তি</a></li>
-                        <li><a href="">ব্লগ</a></li>
-        
+                </div> -->
+                
+                <!-- Company -->
+                <div class="company ">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">কোম্পানি</p>
+                    <ul class="text-base lg:text-lg ">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">শিক্ষক হিসাবে যোগ দিন</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">নিয়োগ বিজ্ঞপ্তি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্লগ</a></li>
                     </ul>
-            
-                  </div>
-                  <div class="policies">
-                    <p>পলিসিসমূহ</p> 
-                    <ul>
-                        <li><a href="">প্রাইভেসি পলিসি</a></li>
-                        <li><a href="">রিফান্ড পলিসি</a></li>
-                        <li><a href="">ব্যবহারকারীর শর্তাবলি</a></li>
+                </div>
+                <!-- Policies -->
+                <div class="policies">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">পলিসিসমূহ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">রিফান্ড পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্যবহারকারীর শর্তাবলি</a></li>
                     </ul>
-            
-                  </div>
-                  <div class="contacts">
-                    <p>যোগাযোগ</p> 
-                    <ul>
-                        <li>হোয়াটসআপঃ  +8801813694582</li>
-                        <li>কল করুনঃ +8801813694582</a></li>
-                        <li>ইমেইলঃ @support.sabasonlineschool.com</li>
+                </div>
+                <!-- Contacts -->
+                <div class="contacts">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">যোগাযোগ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li class="text-gray-100">হোয়াটসআপঃ +8801813694582</li>
+                        <li class="text-gray-100">কল করুনঃ +8801813694582</li>
+                        <li class="text-gray-100">ইমেইলঃ @support.sabasonlineschool.com</li>
                     </ul>
+                    <div class="icons flex justify-center gap-5 mt-2">
+                        <img src="../Resources/boxicons-2.1.4-SVG-24/facebook-circle.png" alt="Facebook Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="../Resources/boxicons-2.1.4-SVG-24/instagram-alt.png" alt="Instagram Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="../Resources/boxicons-2.1.4-SVG-24/twitter.png" alt="Twitter Icon"
+                            class="w-6 h-6 cursor-pointer">
+                        <img src="../Resources/boxicons-2.1.4-SVG-24/youtube-logo-24.png" alt="YouTube Icon"
+                            class="w-6 h-6 cursor-pointer ">
+                    </div>
+                </div>
+            </div>
             
-                  </div>
-        
-             </div>
-             <div class="icons">
-                <img src="../Resources/boxicons-2.1.4-SVG-24/facebook-circle.png" alt="">
-                <img src="../Resources/boxicons-2.1.4-SVG-24/instagram-alt.png" alt="">
-                <img src="../Resources/boxicons-2.1.4-SVG-24/twitter.png" alt="">
-                <img src="../Resources/boxicons-2.1.4-SVG-24/youtube-logo-24.png" alt="">
-              </div>
         </section>
-
     </footer>
 </body>
 

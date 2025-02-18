@@ -12,26 +12,92 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-              theme: {
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
                 extend: {
-                  colors: {
-                    clifford: '#da373d',
-                    accentcolor: '#179800',
-                  }
+                    colors: {
+                        clifford: '#da373d',
+                        accentcolor: '#179800',
+                    }
                 }
-              }
             }
-          </script>
+        }
+    </script>
     <style>
         .font-hind-siliguri {
             font-family: "Hind Siliguri", serif;
             font-weight: 400;
             font-style: normal;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        .carousel-container2 {
+            display: flex;
+            overflow-x: auto;
+            overflow: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar */
+        }
+
+        .carousel-container2::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar */
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            margin-right: 1rem;
+        }
+
+        .carousel-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .carousel-navigation button {
+            pointer-events: all;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-navigation button:hover {
+            background: rgba(255, 255, 255, 1);
         }
     </style>
 </head>
@@ -40,12 +106,13 @@
     <!-- Header Section -->
     <header>
         <!-- Navbar -->
-         
-        <nav class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none">
+
+        <nav
+            class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none transition-all duration-300 hover:shadow-lg lg:border-none">
             <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
-             <div class="navbar bg-base-100 px-0 flex items-center">
-               <div class="navbar-start mx-0 ">
-                <!-- <div class="dropdown">
+                <div class="navbar bg-base-100 px-0 flex items-center">
+                    <div class="navbar-start mx-0 ">
+                        <!-- <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -74,68 +141,73 @@
                       <li><a>Item 3</a></li>
                     </ul>
                   </div> -->
-                 <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[130px] h-auto" src="Resources/Logo.png"
-                     alt=""></a>
-               </div>
-               <div class="navbar-center hidden lg:flex lg:mt-2">
-                 <ul class="menu menu-horizontal px-1 text-lg">
-                    <li><a href="index.html">হোম</a></li>
-                        <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
-                        <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
-                        <li> <a href="">এক্সাম ব্যাচ</a></li>
-                 </ul>
-               </div>
-       
-               <div class="hidden lg:flex navbar-end ">
-       
-                 <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor">
-                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                   </svg>
-                 </button>
-       
-                 <div class="button flex gap-2">
-                   <button class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor  "><a
-                       class=" text-black min-h-0" href="login.html">লগ ইন</a></button>
-                   <button class="border-2 border-accentcolor  bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white "><a
-                       class="   min-h-0 ">রেজিস্টার</a></button>
-                 </div>
-                 
-                 </div>
-               </div>
-               <div class="toogle  lg:hidden">
-                 <img src="c2-assets/bars-3.png" alt="">
+                        <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[90px] lg:w-[130px] h-auto"
+                                src="Resources/Logo.png" alt=""></a>
+                    </div>
+                    <div class="navbar-center hidden lg:flex lg:mt-2">
+                        <ul class="menu menu-horizontal px-1 text-lg">
+                            <li><a href="index.html">হোম</a></li>
+                            <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
+                            <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
+                            <li> <a href="">এক্সাম ব্যাচ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class=" navbar-end ">
+
+                        <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+
+                        <div class="button flex gap-2">
+                            <a class=" text-black min-h-0 hover:text-white" href="login.html"><button
+                                    class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor  ">লগ
+                                    ইন</button></a>
+                            <button
+                                class="hidden lg:flex border-2 border-accentcolor  bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white "><a
+                                    class="   min-h-0 ">রেজিস্টার</a></button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="toogle  lg:hidden">
+                    <img src="c2-assets/bars-3.png" alt="">
+                </div>
             </div>
-            </div>
-            
-       
-           </nav>
-           <div class="for mobile lg:hidden">
-            <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full p-2 bg-white shadow-lg flex justify-around items-center rounded-t-2xl">
+
+
+        </nav>
+
+        <div class="for mobile lg:hidden">
+            <div
+                class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full p-2 bg-white shadow-lg flex justify-around items-center rounded-t-2xl z-10">
                 <!-- Home -->
                 <a href="#" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
-                  <i class="fas fa-home text-base mb-1"></i>
-                  <span class="text-sm">হোম</span> 
+                    <i class="fas fa-home text-base mb-1"></i>
+                    <span class="text-sm">হোম</span>
                 </a>
                 <!-- Varsity Admission -->
                 <a href="Varsity/varsity.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
-                  <i class="fas fa-graduation-cap text-base mb-1"></i>
-                  <span class="text-sm">ভার্সিটি এডমিশন</span>
+                    <i class="fas fa-graduation-cap text-base mb-1"></i>
+                    <span class="text-sm">ভার্সিটি এডমিশন</span>
                 </a>
                 <!-- Medical Admission -->
                 <a href="Medical/medical.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
-                  <i class="fas fa-hospital text-base mb-1"></i>
-                  <span class="text-sm">মেডিকেল এডমিশন</span>
+                    <i class="fas fa-hospital text-base mb-1"></i>
+                    <span class="text-sm">মেডিকেল এডমিশন</span>
                 </a>
             </div>
 
-           </div>
+        </div>
 
         <!-- Banner -->
-        <div class="banner mt-6 sm:mt-24">
-            <img src="Resources/banner.jpg" alt="Banner" class="w-full">
+        <div class="banner mt-[70px] lg:mt-24">
+            <img src="Resources/banner.jpg" alt="Banner"
+                class="w-full transition-transform duration-700 hover:scale-110">
         </div>
     </header>
 
@@ -143,38 +215,120 @@
     <main>
         <!-- Intermediate Section -->
         <section class="Intermidiate container w-[83.94vw] mx-auto mt-2  mt-12 sm:mt-24">
-            <p class="text-2xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10">
-                এইচ এস সি পরীক্ষার্থীদের জন্য <br> অনলাইন ব্যাচ
+            <p class="text-2xl sm:text-4xl font-semibold text-center mb-2 text-accentcolor">
+                এইচ এস সি ব্যাচ - ২০২৫
             </p>
-            <div class="course-container flex gap-4 sm:gap-6 overflow-x-auto pb-4">
+            <p class="text-base font-semibold text-center mb-20 ">এইচ এস সি ব্যাচ - ২৫ এর শিক্ষার্থীদের জনয় অনলাইন ব্যাচ
+            </p>
+            <div class="carousel-container">
                 <!-- Course Cards -->
-                <div
-                    class="course flex-shrink-0 w-64 sm:w-72 border-2 border-gray-100 rounded-lg cursor-pointer hover:border-green-200">
-                    <img src="Resources/inter_1.jpg" alt="Course Image" class="w-full">
-                    <p class="text-base sm:text-lg font-medium p-4">HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স প্রথম পত্র)</p>
-                    <h6 class="text-green-600 text-base sm:text-lg p-4">৫৫০০ টাকা</h6>
+                <div class="carousel-item">
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:scale-105">
+                        <img src="Resources/inter_1.jpg" alt="" class="rounded-xl w-full object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Physics 1st Paper</h6>
+                            <p class="text-gray-600 mb-2 text-lg font-semibold">Abdul Hannan Masud</p>
+                            <p class="text-gray-600 mb-2">কোর্স ফি - ৫০০০টাকা</p>
+
+                            <div class="flex justify-between mt-6 ">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="course flex-shrink-0 w-64 sm:w-72 border-2 border-gray-100 rounded-lg cursor-pointer hover:border-green-200">
-                    <img src="Resources/inter_1.jpg" alt="Course Image" class="w-full">
-                    <p class="text-base sm:text-lg font-medium p-4">HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স দ্বিতীয় পত্র)</p>
-                    <h6 class="text-green-600 text-base sm:text-lg p-4">৫০০০ টাকা</h6>
+                <div class="carousel-item">
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:scale-105">
+                        <img src="Resources/inter_1.jpg" alt="" class="rounded-xl w-full object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Physics 2nd Paper</h6>
+                            <p class="text-gray-600 mb-2 text-lg font-semibold">Salsabil Arabi Nova</p>
+                            <p class="text-gray-600 mb-2">কোর্স ফি - ৬০০০টাকা</p>
+
+                            <div class="flex justify-between mt-6 ">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="course flex-shrink-0 w-64 sm:w-72 border-2 border-gray-100 rounded-lg cursor-pointer hover:border-green-200">
-                    <img src="Resources/inter_1.jpg" alt="Course Image" class="w-full">
-                    <p class="text-base sm:text-lg font-medium p-4">HSC 26 অনলাইন ব্যাচ<br>(কেমিস্ট্রি প্রথম পত্র)</p>
-                    <h6 class="text-green-600 text-base sm:text-lg p-4">৬৫০০ টাকা</h6>
+                <div class="carousel-item">
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:scale-105">
+                        <img src="Resources/inter_1.jpg" alt="" class="rounded-xl w-full object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Chemistry 1st Paper</h6>
+                            <p class="text-gray-600 mb-2 text-lg font-semibold">Shafrin Hasnat Shuvro</p>
+                            <p class="text-gray-600 mb-2">কোর্স ফি - ৫৫০০টাকা</p>
+
+                            <div class="flex justify-between mt-6 ">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div
-                    class="course flex-shrink-0 w-64 sm:w-72 border-2 border-gray-100 rounded-lg cursor-pointer hover:border-green-200">
-                    <img src="Resources/inter_1.jpg" alt="Course Image" class="w-full">
-                    <p class="text-base sm:text-lg font-medium p-4">HSC 26 অনলাইন ব্যাচ <br>(কেমিস্ট্রি দ্বিতীয় পত্র)
-                    </p>
-                    <h6 class="text-green-600 text-base sm:text-lg p-4">৬০০০ টাকা</h6>
+                <div class="carousel-item">
+                    <div
+                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:scale-105">
+                        <img src="Resources/inter_1.jpg" alt="" class="rounded-xl w-full object-cover">
+                        <div class="p-5">
+                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Chemistry 2nd Paper</h6>
+                            <p class="text-gray-600 mb-2 text-lg font-semibold">Ajmol Hasan Shoikat</p>
+                            <p class="text-gray-600 mb-2">কোর্স ফি - ৫০০০টাকা</p>
+
+                            <div class="flex justify-between mt-6 ">
+                                <button
+                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                    বিস্তারিত
+                                </button>
+                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                    এনরোল
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Navigation Buttons -->
+            <div class="flex justify-center mt-4">
+                <button id="prevButton" class="btn btn-circle mr-2">❮</button>
+                <button id="nextButton" class="btn btn-circle">❯</button>
+            </div>
+
+
         </section>
+
+        <!-- <script>
+            const carouselContainer = document.querySelector('.carousel-container');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+    
+            prevButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+    
+            nextButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        </script> -->
 
         <!-- Admission Section -->
         <section class="admission-section-container bg-gray-50 mt-12 sm:mt-24 py-12 sm:py-20">
@@ -183,60 +337,146 @@
                     <img src="Resources/book-reader.svg" alt="Book Reader Icon" class="w-6 h-6">
                     <p class="text-lg">ভর্তি পরীক্ষা</p>
                 </div>
-                <p class="admission-title text-2xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10">এডমিশন সেশন -
+                <p
+                    class="admission-title text-2xl sm:text-4xl font-semibold text-center mb-8 sm:mb-10 text-accentcolor">
+                    এডমিশন সেশন -
                     ২০২৪</p>
-                <div class="admission-container flex gap-4 sm:gap-6 overflow-x-auto pb-4">
-                    <!-- Admission Cards -->
-                    <div
-                        class="admission flex-shrink-0 w-64 sm:w-72 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-300">
-                        <img src="Resources/DU-A.jpg" alt="Admission Image" class="w-full h-40 sm:h-48 object-cover">
-                        <h6 class="text-xl sm:text-2xl font-bold p-4">ঢাবি ভর্তি প্রস্তুতি</h6>
-                        <p class="text-base sm:text-lg text-gray-600 p-4">সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar flex items-center gap-2 p-4">
-                            <p class="text-blue-900">বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="Arrow Icon"
-                                class="w-5 h-5">
+                <div class="relative">
+                    <div class="admission-container  carousel-container2 flex pb-4">
+
+                        <!-- Admission Cards -->
+
+                        <div class="carousel-item">
+                            <div
+                            class=" border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:translate-y-2">
+                            <img src="Resources/DU-A(Full).jpg" alt="" class="rounded-xl w-full object-cover h-40">
+                            <div class="p-5">
+                                <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Preparation</h6>
+                                <p class="text-gray-600 mb-2 text-lg font-semibold">Abdul Hannan Masud</p>
+                                <p class="text-gray-600 mb-2">কোর্স ফি - ৫০০০টাকা</p>
+    
+                                <div class="flex justify-between mt-6 ">
+                                    <button
+                                        class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                        বিস্তারিত
+                                    </button>
+                                    <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                        এনরোল
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div
+                            class=" border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:translate-y-2">
+                            <img src="Resources/Guccho A.jpg" alt="" class="rounded-xl w-full object-cover h-40">
+                            <div class="p-5">
+                                <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">GST A Unit Preparation</h6>
+                                <p class="text-gray-600 mb-2 text-lg font-semibold">Sharif Ahmad Shagor</p>
+                                <p class="text-gray-600 mb-2">কোর্স ফি - ৪০০০টাকা</p>
+    
+                                <div class="flex justify-between mt-6 ">
+                                    <button
+                                        class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                        বিস্তারিত
+                                    </button>
+                                    <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                        এনরোল
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div
+                            class=" border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:translate-y-2">
+                            <img src="Resources/Medical Admission.jpeg" alt="" class="rounded-xl w-full object-cover h-40">
+                            <div class="p-5">
+                                <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Medical Past Q Solve </h6>
+                                <p class="text-gray-600 mb-2 text-lg font-semibold">Nabil Ahmad Sujon</p>
+                                <p class="text-gray-600 mb-2">কোর্স ফি - ২০০০টাকা</p>
+    
+                                <div class="flex justify-between mt-6 ">
+                                    <button
+                                        class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                        বিস্তারিত
+                                    </button>
+                                    <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                        এনরোল
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div
+                            class=" border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all transition-all duration-700 hover:translate-y-2">
+                            <img src="Resources/Versity A.jpg" alt="" class="rounded-xl w-full object-cover h-40">
+                            <div class="p-5">
+                                <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">Varsity A Unit Preparation</h6>
+                                <p class="text-gray-600 mb-2 text-lg font-semibold">Khaled Chowdhury</p>
+                                <p class="text-gray-600 mb-2">কোর্স ফি - ৫৫০০টাকা</p>
+    
+                                <div class="flex justify-between mt-6 ">
+                                    <button
+                                        class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
+                                        বিস্তারিত
+                                    </button>
+                                    <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
+                                        এনরোল
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
                     </div>
-                    <div
-                        class="admission flex-shrink-0 w-64 sm:w-72 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-300">
-                        <img src="Resources/Guccho A.jpg" alt="Admission Image"
-                            class="w-full h-40 sm:h-48 object-cover">
-                        <h6 class="text-xl sm:text-2xl font-bold p-4">গুচ্ছ ভর্তি প্রস্তুতি</h6>
-                        <p class="text-base sm:text-lg text-gray-600 p-4">সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar flex items-center gap-2 p-4">
-                            <p class="text-blue-900">বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="Arrow Icon"
-                                class="w-5 h-5">
-                        </div>
-                    </div>
-                    <div
-                        class="admission flex-shrink-0 w-64 sm:w-72 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-300">
-                        <img src="Resources/Medical Admission.jpeg" alt="Admission Image"
-                            class="w-full h-40 sm:h-48 object-cover">
-                        <h6 class="text-xl sm:text-2xl font-bold p-4">মেডিকেল ভর্তি প্রস্তুতি</h6>
-                        <p class="text-base sm:text-lg text-gray-600 p-4">সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar flex items-center gap-2 p-4">
-                            <p class="text-blue-900">বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="Arrow Icon"
-                                class="w-5 h-5">
-                        </div>
-                    </div>
-                    <div
-                        class="admission flex-shrink-0 w-64 sm:w-72 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-300">
-                        <img src="Resources/Versity A.jpg" alt="Admission Image"
-                            class="w-full h-40 sm:h-48 object-cover">
-                        <h6 class="text-xl sm:text-2xl font-bold p-4">ভার্সিটি ভর্তি প্রস্তুতি</h6>
-                        <p class="text-base sm:text-lg text-gray-600 p-4">সরোয়ার জাহান শাওন</p>
-                        <div class="details-bar flex items-center gap-2 p-4">
-                            <p class="text-blue-900">বিস্তারিত</p>
-                            <img src="Resources/boxicons-2.1.4-SVG-24/right-arrow-alt-regular-24.png" alt="Arrow Icon"
-                                class="w-5 h-5">
-                        </div>
+                    <div class="carousel-navigation">
+                        <button id="previousButton" class="">❮</button>
+                        <button id="nexttButton" class="">❯</button>
                     </div>
                 </div>
             </div>
+
+
+            </div>
         </section>
+
+        <script>
+
+            // For Intermidiate Section
+
+            const carouselContainer = document.querySelector('.carousel-container');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+
+            prevButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            nextButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            // For Admission Section 
+
+            const carouselContainer2 = document.querySelector('.carousel-container2');
+            const previousButton = document.getElementById('previousButton');
+            const nexttButton = document.getElementById('nexttButton');
+
+            previousButton.addEventListener('click', () => {
+                carouselContainer2.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+
+            nexttButton.addEventListener('click', () => {
+                carouselContainer2.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        </script>
+
     </main>
 
     <!-- Footer Section -->
@@ -254,7 +494,7 @@
                         <li><a href="#" class="text-gray-600 hover:text-green-600">অনলাইন এক্সাম ব্যাচ</a></li>
                     </ul>
                 </div> -->
-                
+
                 <!-- Company -->
                 <div class="company ">
                     <p class="text-lg lg:text-xl font-medium underline mb-4">কোম্পানি</p>
@@ -293,7 +533,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
     </footer>
 </body>

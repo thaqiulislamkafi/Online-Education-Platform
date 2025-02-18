@@ -1,561 +1,283 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABAS Online School</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        clifford: '#da373d',
-                        accentcolor: '#179800',
+                    colors: { accentcolor: '#179800' },
+                    transitionProperty: {
+                        'width': 'width',
+                        'height': 'height',
+                        'spacing': 'margin, padding',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out'
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+                        slideUp: { '0%': { transform: 'translateY(20px)' }, '100%': { transform: 'translateY(0)' } }
                     }
                 }
             }
         }
     </script>
     <style>
-        .font-hind-siliguri {
-            font-family: "Hind Siliguri", serif;
-            font-weight: 400;
-            font-style: normal;
+        .font-hind-siliguri { font-family: "Hind Siliguri", serif; }
+        .carousel-container {
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
         }
     </style>
 </head>
 
-<body class="font-['Hind_Siliguri'] bg-gray-50">
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50">
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h8m-8 6h16" />
-                  </svg>
+<body class="font-hind-siliguri">
+    <!-- Header with Sticky Navigation -->
+    <header>
+        <nav class="bg-white fixed top-0 w-full z-50 border-b-2 border-b-accentcolor transition-all duration-300 hover:shadow-lg lg:border-none">
+            <div class="nav-section w-[85.94vw] mx-auto py-2 flex justify-between items-center">
+                <div class="navbar px-0 flex items-center">
+                    <a class="btn btn-ghost px-0 animate-fade-in">
+                        <img class="w-[130px] h-auto transition-transform duration-300 hover:scale-105" src="Resources/Logo.png" alt="Logo">
+                    </a>
+                    <div class="navbar-center hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1 text-lg space-x-4">
+                            <li><a href="index.html" class="hover:text-accentcolor transition-colors duration-300">হোম</a></li>
+                            <li><a href="Medical/medical.html" class="hover:text-accentcolor transition-colors duration-300">মেডিকেল ব্যাচ</a></li>
+                            <li><a href="Varsity/varsity.html" class="hover:text-accentcolor transition-colors duration-300">ভার্সিটি ব্যাচ</a></li>
+                            <li><a href="#" class="hover:text-accentcolor transition-colors duration-300">এক্সাম ব্যাচ</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden lg:flex items-center gap-4">
+                        <button class="btn btn-ghost btn-circle hover:bg-gray-100 transition-colors duration-300">
+                            <i class="fas fa-search text-gray-600"></i>
+                        </button>
+                        <div class="flex gap-2">
+                            <button class="border-2 border-accentcolor px-8 py-2 rounded-lg hover:bg-accentcolor hover:text-white transition-all duration-300">
+                                <a href="login.html">লগ ইন</a>
+                            </button>
+                            <button class="bg-accentcolor text-white px-8 py-2 rounded-lg hover:bg-[#178A03] transition-colors duration-300">
+                                রেজিস্টার
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <ul
-                  tabindex="0"
-                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                  <li><a>Item 1</a></li>
-                  <li>
-                    <a>Parent</a>
-                    <ul class="p-2">
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                    </ul>
-                  </li>
-                  <li><a>Item 3</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost text-xl">daisyUI</a>
             </div>
-            <div class="navbar-center hidden lg:flex">
-              <ul class="menu menu-horizontal px-1">
-                <li><a>Item 1</a></li>
-                <li>
-                  <details>
-                    <summary>Parent</summary>
-                    <ul class="p-2">
-                      <li><a>Submenu 1</a></li>
-                      <li><a>Submenu 2</a></li>
-                    </ul>
-                  </details>
-                </li>
-                <li><a>Item 3</a></li>
-              </ul>
+        </nav>
+
+        <!-- Mobile Bottom Navigation -->
+        <div class="lg:hidden fixed bottom-0 w-full bg-white shadow-lg rounded-t-2xl transition-transform duration-300 transform translate-y-0">
+            <div class="flex justify-around p-3">
+                <a href="#" class="flex flex-col items-center text-gray-700 hover:text-accentcolor transition-colors duration-300">
+                    <i class="fas fa-home mb-1"></i>
+                    <span class="text-sm">হোম</span>
+                </a>
+                <a href="Varsity/varsity.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor transition-colors duration-300">
+                    <i class="fas fa-graduation-cap mb-1"></i>
+                    <span class="text-sm">ভার্সিটি</span>
+                </a>
+                <a href="Medical/medical.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor transition-colors duration-300">
+                    <i class="fas fa-hospital mb-1"></i>
+                    <span class="text-sm">মেডিকেল</span>
+                </a>
             </div>
-            <div class="navbar-end">
-              <a class="btn">Button</a>
-            </div>
-          </div>
-          <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bottom Navbar with Tailwind CSS</title>
-  <!-- Include Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Include FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-gray-100">
-  <!-- Bottom Navbar -->
-  <nav class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[83.94vw] p-7 bg-white shadow-lg flex justify-around items-center rounded-t-2xl">
-    <!-- Home -->
-    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-      <i class="fas fa-home text-2xl mb-1"></i>
-      <span class="text-sm">Home</span>
-    </a>
-    <!-- Varsity Admission -->
-    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-      <i class="fas fa-graduation-cap text-2xl mb-1"></i>
-      <span class="text-sm">Varsity Admission</span>
-    </a>
-    <!-- Medical Admission -->
-    <a href="#" class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-      <i class="fas fa-hospital text-2xl mb-1"></i>
-      <span class="text-sm">Medical Admission</span>
-    </a>
-  </nav>
-</body>
-</html>
+        </div>
+
+        <!-- Animated Banner -->
+        <div class="banner mt-24 animate-slide-up">
+            <img src="Resources/banner.jpg" alt="Banner" class="w-full transform transition-transform duration-500 hover:scale-105">
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="mt-24">
-        <!-- Varsity Admission Section -->
-        <section class=" py-24">
-            <div class="w-[83.94vw] mx-auto mt-2">
-                <h2 class="text-4xl text-center font-bold mb-12">Varsity Admission - 2024</h2>
+    <main class="overflow-x-hidden">
+        <!-- Course Carousel Section -->
+        <section class="container w-[83.94vw] mx-auto mt-24 animate-fade-in">
+            <h2 class="text-4xl font-semibold text-center mb-12 transition-opacity duration-500">
+                এইচ এস সি পরীক্ষার্থীদের জন্য <br> অনলাইন ব্যাচ
+            </h2>
+            <div class="carousel-container flex overflow-x-auto snap-x snap-mandatory space-x-6 pb-6">
+                <!-- Course Card 1 -->
+                <div class="carousel-item snap-start flex-none w-72 transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="border-2 border-gray-100 rounded-lg overflow-hidden hover:border-green-200 transition-colors duration-300">
+                        <img src="Resources/inter_1.jpg" alt="Course" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <p class="text-lg font-medium mb-2">HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স প্রথম পত্র)</p>
+                            <h6 class="text-accentcolor text-lg">৫৫০০ টাকা</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 2 -->
+                <div class="carousel-item snap-start flex-none w-72 transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="border-2 border-gray-100 rounded-lg overflow-hidden hover:border-green-200 transition-colors duration-300">
+                        <img src="Resources/inter_1.jpg" alt="Course" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <p class="text-lg font-medium mb-2">HSC 26 অনলাইন ব্যাচ <br> (ফিজিক্স দ্বিতীয় পত্র)</p>
+                            <h6 class="text-accentcolor text-lg">৫০০০ টাকা</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 3 -->
+                <div class="carousel-item snap-start flex-none w-72 transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="border-2 border-gray-100 rounded-lg overflow-hidden hover:border-green-200 transition-colors duration-300">
+                        <img src="Resources/inter_1.jpg" alt="Course" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <p class="text-lg font-medium mb-2">HSC 26 অনলাইন ব্যাচ <br> (কেমিস্ট্রি প্রথম পত্র)</p>
+                            <h6 class="text-accentcolor text-lg">৬৫০০ টাকা</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 4 -->
+                <div class="carousel-item snap-start flex-none w-72 transform transition-all duration-500 hover:-translate-y-2">
+                    <div class="border-2 border-gray-100 rounded-lg overflow-hidden hover:border-green-200 transition-colors duration-300">
+                        <img src="Resources/inter_1.jpg" alt="Course" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <p class="text-lg font-medium mb-2">HSC 26 অনলাইন ব্যাচ <br> (কেমিস্ট্রি দ্বিতীয় পত্র)</p>
+                            <h6 class="text-accentcolor text-lg">৬০০০ টাকা</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="flex justify-center mt-4">
+                <button id="prevButton" class="btn btn-circle mr-2 hover:bg-gray-100 transition-colors duration-300">❮</button>
+                <button id="nextButton" class="btn btn-circle hover:bg-gray-100 transition-colors duration-300">❯</button>
+            </div>
+        </section>
 
-                <!-- Grid for Courses -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
-                    <!-- Course 1 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/DU-A(Full).jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Preparation</h6>
-                            <p class="text-gray-600 mb-2 ">Sarowar Jahan Shawon</p>
+        <script>
+            const carouselContainer = document.querySelector('.carousel-container');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+    
+            prevButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+    
+            nextButton.addEventListener('click', () => {
+                carouselContainer.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        </script>
 
-                            <div class="space-y-1 text-black">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
 
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
+        <!-- Admission Section -->
+        <section class="bg-gray-50 py-20 mt-24 animate-slide-up">
+            <div class="container w-[83.94vw] mx-auto">
+                <div class="text-center mb-16">
+                    <div class="flex justify-center items-center gap-3 mb-4">
+                        <img src="Resources/book-reader.svg" alt="Icon" class="w-8 h-8 animate-pulse">
+                        <p class="text-lg">ভর্তি পরীক্ষা</p>
+                    </div>
+                    <h2 class="text-4xl font-semibold mb-8 transition-opacity duration-500">এডমিশন সেশন - ২০২৪</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Admission Card 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                        <img src="Resources/DU-A.jpg" alt="Admission" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">ঢাবি ভর্তি প্রস্তুতি</h3>
+                            <p class="text-gray-600 mb-4">সরোয়ার জাহান শাওন</p>
+                            <div class="flex items-center text-blue-900 hover:text-blue-700 transition-colors duration-300">
+                                <span>বিস্তারিত</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Course 2 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/DU-A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-bold mb-2">DU A Unit Written Preparation</h6>
-                            <p class="text-gray-600 mb-2">Abhi Dutta Tushar</p>
-
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
+                    <!-- Admission Card 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                        <img src="Resources/Guccho A.jpg" alt="Admission" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">গুচ্ছ ভর্তি প্রস্তুতি</h3>
+                            <p class="text-gray-600 mb-4">সরোয়ার জাহান শাওন</p>
+                            <div class="flex items-center text-blue-900 hover:text-blue-700 transition-colors duration-300">
+                                <span>বিস্তারিত</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Course 3 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/Guccho A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">GST A Unit Preparation</h6>
-                            <p class="text-gray-600 mb-2">Abdul Hannan Masud</p>
-
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
+                    <!-- Admission Card 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                        <img src="Resources/Medical Admission.jpeg" alt="Admission" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">মেডিকেল ভর্তি প্রস্তুতি</h3>
+                            <p class="text-gray-600 mb-4">সরোয়ার জাহান শাওন</p>
+                            <div class="flex items-center text-blue-900 hover:text-blue-700 transition-colors duration-300">
+                                <span>বিস্তারিত</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Course 4 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
-                            <p class="text-gray-600 mb-2">Hasnat Abdullah</p>
-
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Course 5 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
-                            <p class="text-gray-600 mb-2">Najmul Hasan Sakib</p>
-
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Course 6 -->
-                    <div
-                        class="bg-white border-2 border-gray-100 rounded-xl overflow-hidden hover:border-green-400 transition-all">
-                        <img src="../Resources/Versity A.jpg" alt="" class="rounded-xl w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h6 class="text-xl font-['Work_Sans'] font-semibold mb-2">Varsity A Unit Preparation</h6>
-                            <p class="text-gray-600 mb-2">Chowdhury Rakib</p>
-
-                            <div class="space-y-1">
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>মোট ১২০+ ক্লাস</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>সাপ্তাহে মোট ৭২ ঘন্টা সাপোর্ট সেশন</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <img src="../Resources/boxicons-2.1.4-SVG-24/caret-right-circle-solid-24.png"
-                                        class="w-4 h-4">
-                                    <p>টপিক্স ভিত্তিক পিডিএফ</p>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between mt-4">
-                                <button
-                                    class="border border-gray-200 px-4 py-1 rounded-lg hover:border-green-500 hover:text-green-600">
-                                    বিস্তারিত
-                                </button>
-                                <button class="bg-accentcolor text-white px-4 py-1 rounded-lg hover:bg-green-700">
-                                    এনরোল
-                                </button>
+                    <!-- Admission Card 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                        <img src="Resources/Versity A.jpg" alt="Admission" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">ভার্সিটি ভর্তি প্রস্তুতি</h3>
+                            <p class="text-gray-600 mb-4">সরোয়ার জাহান শাওন</p>
+                            <div class="flex items-center text-blue-900 hover:text-blue-700 transition-colors duration-300">
+                                <span>বিস্তারিত</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="Succeed Student">
-            
-            <div class="table-container w-[83.94vw]  mx-auto">
-                <p class="text-center font-bold text-2xl lg:text-4xl text-accentcolor my-14">বিগত বছরে চান্সপ্রাপ্ত শিক্ষার্থীসমূহ</p>
-                <div class="pb-20 font-['Work_Sans']">
-                    <div class="overflow-x-auto ">
-                        <!-- Table Container with Fixed Height and Y-Axis Scroll -->
-                        <div class="h-[400px] overflow-y-auto">
-                          <table class="table table-zebra">
-                            <!-- Table Head -->
-                            <thead>
-                              <tr class="">
-                                <th class="text-lg font-bold sticky top-0 bg-base-200">Roll Number</th>
-                                <th class="text-lg font-bold sticky top-0 bg-base-200">Name</th>
-                                <th class="text-lg font-bold sticky top-0 bg-base-200">Address</th>
-                              </tr>
-                            </thead>
-                            <!-- Table Body -->
-                            <tbody>
-                              <!-- Rows 1 to 20 -->
-                              <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>123 Main St, Cityville</td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>Jane Smith</td>
-                                <td>456 Elm St, Townsville</td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td>Alice Johnson</td>
-                                <td>789 Oak St, Villageton</td>
-                              </tr>
-                              <tr>
-                                <td>4</td>
-                                <td>Bob Brown</td>
-                                <td>321 Pine St, Hamletville</td>
-                              </tr>
-                              <tr>
-                                <td>5</td>
-                                <td>Charlie Davis</td>
-                                <td>654 Maple St, Countryside</td>
-                              </tr>
-                              <tr>
-                                <td>6</td>
-                                <td>Eve Wilson</td>
-                                <td>987 Cedar St, Suburbia</td>
-                              </tr>
-                              <tr>
-                                <td>7</td>
-                                <td>Frank Moore</td>
-                                <td>135 Birch St, Uptown</td>
-                              </tr>
-                              <tr>
-                                <td>8</td>
-                                <td>Grace Taylor</td>
-                                <td>246 Walnut St, Downtown</td>
-                              </tr>
-                              <tr>
-                                <td>9</td>
-                                <td>Hank Anderson</td>
-                                <td>357 Cherry St, Midtown</td>
-                              </tr>
-                              <tr>
-                                <td>10</td>
-                                <td>Ivy Martinez</td>
-                                <td>468 Peach St, Riverside</td>
-                              </tr>
-                              <tr>
-                                <td>11</td>
-                                <td>Jack White</td>
-                                <td>579 Apple St, Lakeside</td>
-                              </tr>
-                              <tr>
-                                <td>12</td>
-                                <td>Karen Harris</td>
-                                <td>680 Orange St, Hillside</td>
-                              </tr>
-                              <tr>
-                                <td>13</td>
-                                <td>Leo Clark</td>
-                                <td>791 Banana St, Mountainside</td>
-                              </tr>
-                              <tr>
-                                <td>14</td>
-                                <td>Mia Lewis</td>
-                                <td>802 Grape St, Beachtown</td>
-                              </tr>
-                              <tr>
-                                <td>15</td>
-                                <td>Nina Walker</td>
-                                <td>913 Lemon St, Forestville</td>
-                              </tr>
-                              <tr>
-                                <td>16</td>
-                                <td>Oscar Hall</td>
-                                <td>124 Lime St, Desertville</td>
-                              </tr>
-                              <tr>
-                                <td>17</td>
-                                <td>Paul Young</td>
-                                <td>235 Mango St, Snowtown</td>
-                              </tr>
-                              <tr>
-                                <td>18</td>
-                                <td>Quincy King</td>
-                                <td>346 Papaya St, Rainville</td>
-                              </tr>
-                              <tr>
-                                <td>19</td>
-                                <td>Rachel Scott</td>
-                                <td>457 Berry St, Sunville</td>
-                              </tr>
-                              <tr>
-                                <td>20</td>
-                                <td>Steve Green</td>
-                                <td>568 Kiwi St, Moonville</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    
-            </div>
-
-        </section>
-        
-        
     </main>
 
-
-    <!-- Footer -->
-    <footer class="mt-10 bg-accentcolor">
-        <section class="footer-container container w-[83.94vw] mx-auto py-12 sm:py-20 text-white">
-            <div class="footer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 gap-12">
-                <!-- Courses -->
-                <!-- <div class="courses">
-                    <p class="text-lg font-medium underline mb-4">কোর্সসমূহ</p>
-                    <ul class="text-base">
-                        <li><a href="#" class="text-gray-600 hover:text-green-600">মেডিকেল ভর্তি পরীক্ষা প্রস্তুতি</a>
-                        </li>
-                        <li><a href="#" class="text-gray-600 hover:text-green-600">ভার্সিটি ভর্তি পরীক্ষা প্রস্তুতি</a>
-                        </li>
-                        <li><a href="#" class="text-gray-600 hover:text-green-600">অনলাইন এক্সাম ব্যাচ</a></li>
-                    </ul>
-                </div> -->
-
-                <!-- Company -->
-                <div class="company ">
-                    <p class="text-lg lg:text-xl font-medium underline mb-4">কোম্পানি</p>
-                    <ul class="text-base lg:text-lg ">
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">শিক্ষক হিসাবে যোগ দিন</a></li>
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">নিয়োগ বিজ্ঞপ্তি</a></li>
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্লগ</a></li>
+    <!-- Footer Section -->
+    <footer class="bg-accentcolor mt-24 animate-fade-in">
+        <div class="container w-[83.94vw] mx-auto py-20 text-white">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Company Section -->
+                <div class="space-y-4 transition-opacity duration-500">
+                    <h3 class="text-xl font-medium underline">কোম্পানি</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">শিক্ষক হিসাবে যোগ দিন</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">নিয়োগ বিজ্ঞপ্তি</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">ব্লগ</a></li>
                     </ul>
                 </div>
-                <!-- Policies -->
-                <div class="policies">
-                    <p class="text-lg lg:text-xl font-medium underline mb-4">পলিসিসমূহ</p>
-                    <ul class="text-base lg:text-lg">
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">প্রাইভেসি পলিসি</a></li>
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">রিফান্ড পলিসি</a></li>
-                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্যবহারকারীর শর্তাবলি</a></li>
+                <!-- Policies Section -->
+                <div class="space-y-4 transition-opacity duration-500 delay-100">
+                    <h3 class="text-xl font-medium underline">পলিসিসমূহ</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">রিফান্ড পলিসি</a></li>
+                        <li><a href="#" class="hover:text-gray-200 transition-colors duration-300">ব্যবহারকারীর শর্তাবলি</a></li>
                     </ul>
                 </div>
-                <!-- Contacts -->
-                <div class="contacts">
-                    <p class="text-lg lg:text-xl font-medium underline mb-4">যোগাযোগ</p>
-                    <ul class="text-base lg:text-lg">
+                <!-- Contact Section -->
+                <div class="space-y-4 transition-opacity duration-500 delay-200">
+                    <h3 class="text-xl font-medium underline">যোগাযোগ</h3>
+                    <ul class="space-y-2">
                         <li class="text-gray-100">হোয়াটসআপঃ +8801813694582</li>
                         <li class="text-gray-100">কল করুনঃ +8801813694582</li>
                         <li class="text-gray-100">ইমেইলঃ @support.sabasonlineschool.com</li>
                     </ul>
-                    <div class="icons flex justify-center gap-5 mt-2">
-                        <img src="Resources/boxicons-2.1.4-SVG-24/facebook-circle.png" alt="Facebook Icon"
-                            class="w-6 h-6 cursor-pointer">
-                        <img src="Resources/boxicons-2.1.4-SVG-24/instagram-alt.png" alt="Instagram Icon"
-                            class="w-6 h-6 cursor-pointer">
-                        <img src="Resources/boxicons-2.1.4-SVG-24/twitter.png" alt="Twitter Icon"
-                            class="w-6 h-6 cursor-pointer">
-                        <img src="Resources/boxicons-2.1.4-SVG-24/youtube-logo-24.png" alt="YouTube Icon"
-                            class="w-6 h-6 cursor-pointer ">
+                    <div class="flex justify-center gap-6 mt-4">
+                        <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="hover:opacity-80 transition-opacity duration-300">
+                            <i class="fab fa-youtube text-2xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-
-        </section>
+        </div>
     </footer>
-</body>
 
-</html>
+   
