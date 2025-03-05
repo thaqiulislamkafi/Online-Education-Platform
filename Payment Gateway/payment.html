@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo Bank</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+
+  <style>
+    .sora-font {
+      font-family: "Sora", serif;
+
+
+
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            accentcolor: '#179800',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-900 sora-font">
+  <section class="bg-gray-100 max-w-md min-h-screen mx-auto px-6">
+    <header>
+      <nav class="relative ">
+        <div class="absolute left-16 top-24">
+          <img class="w-[280px] " src="assets/bg.png" alt="">
+        </div>
+        <div class="absolute left-44 top-32">
+          <img src="assets/Group.png" alt="">
+        </div>
+      </nav>
+    </header>
+
+    <section class="pt-56">
+      <section class="bg-gray-50 py-6 px-7 rounded-3xl">
+
+        <form class="">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Mobile Number</span>
+            </label>
+            <input id="mobile-number" type="number" placeholder="Enter your Mobile Number"
+              class="input input-bordered rounded-3xl bg-gray-200 border-none text-sm" />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">4 Digit Pin</span>
+            </label>
+            <input id="pin" type="password" placeholder="Enter 4 Digit Pin"
+              class="input input-bordered rounded-3xl bg-gray-200 border-none text-sm" required />
+
+          </div>
+          <div class="form-control mt-6">
+            <button id="login-btn"
+              class="btn btn-primary rounded-3xl bg-[#0874F2] hover:bg-[#095ab8] border-none">Login</button>
+          </div>
+        </form>
+
+      </section>
+
+    </section>
+  </section>
+  <script src="payment.js"> </script>
+</body>

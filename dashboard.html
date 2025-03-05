@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SABAS Online School</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    clifford: '#da373d',
+                    accentcolor: '#179800',
+                  }
+                }
+              }
+            }
+          </script>
+    <style>
+        .font-hind-siliguri {
+            font-family: "Hind Siliguri", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <style>
+        /* Custom fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Custom hover effect for cards */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Custom glow effect for buttons */
+        .glow-effect:focus {
+            box-shadow: 0 0 0 3px rgba(23, 152, 3, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-hind-siliguri">
+    <!-- Dashboard Header -->
+    <header class="">
+
+        <nav class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none">
+            <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
+             <div class="navbar bg-base-100 px-0 flex items-center">
+               <div class="navbar-start mx-0 ">
+                <!-- <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M4 6h16M4 12h8m-8 6h16" />
+                      </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      <li><a>Item 1</a></li>
+                      <li>
+                        <a>Parent</a>
+                        <ul class="p-2">
+                          <li><a>Submenu 1</a></li>
+                          <li><a>Submenu 2</a></li>
+                        </ul>
+                      </li>
+                      <li><a>Item 3</a></li>
+                    </ul>
+                  </div> -->
+                 <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[130px] h-auto" src="Resources/Logo.png"
+                     alt=""></a>
+               </div>
+               <div class="navbar-center hidden lg:flex lg:mt-2">
+                 <ul class="menu menu-horizontal px-1 text-lg">
+                    <li><a href="index.html">হোম</a></li>
+                        <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
+                        <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
+                        <li> <a href="">এক্সাম ব্যাচ</a></li>
+                 </ul>
+               </div>
+       
+               <div class="hidden lg:flex navbar-end ">
+       
+                 <button class="Search-box hidden lg:flex btn btn-ghost btn-circle">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                   </svg>
+                 </button> 
+       
+                 <div class="button flex gap-2">
+                   <button id="logout-btn" class="border-2 border-accentcolor  py-2 px-8 rounded-lg hover:bg-accentcolor transition-colors duration-300 transform hover:scale-105 "><a
+                       class=" text-black min-h-0" href="login.html">লগ আউট</a></button>
+                   
+                 </div>
+                 
+                 </div>
+               </div>
+               <div class="toogle  lg:hidden">
+                 <img src="c2-assets/bars-3.png" alt="">
+            </div>
+            </div>
+            
+       
+           </nav>
+        
+
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <section class="mb-8 animate-fadeIn">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">স্বাগতম, ব্যবহারকারী!</h2>
+            <p class="text-gray-600">আপনার অগ্রগতি এবং কোর্স সম্পর্কে তথ্য এখানে দেখানো হয়েছে।</p>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Enrolled Courses -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">নিবন্ধিত কোর্স</h3>
+                        <p class="text-gray-600">5টি কোর্স</p>
+                    </div>
+                    <i class="fas fa-book text-green-600 text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Completed Courses -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">সম্পন্ন কোর্স</h3>
+                        <p class="text-gray-600">3টি কোর্স</p>
+                    </div>
+                    <i class="fas fa-check-circle text-green-600 text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Ongoing Courses -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">চলমান কোর্স</h3>
+                        <p class="text-gray-600">2টি কোর্স</p>
+                    </div>
+                    <i class="fas fa-spinner text-green-600 text-3xl"></i>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">অগ্রগতি</h3>
+                        <p class="text-gray-600">75% সম্পন্ন</p>
+                    </div>
+                    <i class="fas fa-chart-line text-green-600 text-3xl"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6 animate-fadeIn">আপনার কোর্সসমূহ</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Course Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/400x200" alt="Course Image" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">HSC 26 অনলাইন ব্যাচ</h3>
+                    <p class="text-gray-600 mb-4">ফিজিক্স প্রথম পত্র</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-green-600 font-semibold">৫৫০০ টাকা</span>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-300 glow-effect">
+                            বিস্তারিত
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/400x200" alt="Course Image" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">HSC 26 অনলাইন ব্যাচ</h3>
+                    <p class="text-gray-600 mb-4">কেমিস্ট্রি প্রথম পত্র</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-green-600 font-semibold">৬৫০০ টাকা</span>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-300 glow-effect">
+                            বিস্তারিত
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-scale">
+                    <img src="https://via.placeholder.com/400x200" alt="Course Image" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">HSC 26 অনলাইন ব্যাচ</h3>
+                    <p class="text-gray-600 mb-4">ফিজিক্স দ্বিতীয় পত্র</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-green-600 font-semibold">৫০০০ টাকা</span>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-300 glow-effect">
+                            বিস্তারিত
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <script>
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn || isLoggedIn !== 'true') {
+            window.location.href = 'login_register.html'; // Redirect to login if not logged in
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login_register.html'; // Redirect to login page
+        });
+    </script> -->
+</body>
+</html>

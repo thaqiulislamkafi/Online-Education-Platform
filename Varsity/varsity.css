@@ -1,0 +1,208 @@
+@import url("../style.css");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.varsity-admission-container{
+    margin-top: 92px;
+    padding: 100px 100px;
+    
+}
+
+.varsity-admission-container h2{
+    font-size: 38px;
+    text-align: center;
+}
+
+
+.varsity-admission{
+    background-image: linear-gradient(white, rgb(247, 247, 246));
+    border-radius: 9px;
+    padding: 40px;
+    max-width: 1012px;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* border: 2px solid tomato; */
+    
+}
+
+.varsity-admission{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    
+}
+
+.varsity-exam{
+    border: 2px solid #e4e2e280;
+    border-radius: 9px;
+    /* cursor: pointer; */
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.varsity-exam:hover{
+    border: 2px solid #1cab5580;
+}
+
+.varsity-exam h6 {
+    font-size: 20px;
+    font-family: "Work Sans", serif;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.Instructor{
+    padding-left: 15px;
+}
+
+.varsity-exam img {
+    height: 180px;
+    width: auto;
+    border-radius: 9px;
+}
+
+.parameters{
+    display: flex;
+    gap :5px;
+    align-items: center;
+    margin-left: 15px;
+}
+.parameters img {
+    height: 17px;
+    width: auto;
+    
+    
+ 
+}
+
+.varsity-admission-button button{
+    font-family: "Hind Siliguri", serif;
+    padding: 5px 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    /* background-color:#169c4c ; */
+    background-color: rgba(255, 255, 255, 0.842) ;
+    border: none;
+    color: rgb(19, 19, 19);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.082);
+    cursor: pointer;
+    
+}
+
+.varsity-admission-button button:hover{
+   color:#169c4c ;
+   border : 2px solid #169c4ca1;
+}
+.varsity-admission-button{
+    display: flex;
+    gap:80px;
+    margin-top: 15px;
+    
+}
+
+
+ /* ..................Varsity Practice Container.................  */
+
+ .varsity-practice-container{
+    margin-top: 92px;
+    padding: 100px 100px;
+    background-color: #093860;
+    
+}
+
+.varsity-practice{
+    /* background-image: linear-gradient(white, rgb(247, 247, 246)); */
+    
+    border-radius: 9px;
+    padding: 40px;
+    max-width: 1012px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border: 2px solid tomato;
+    
+}
+
+.varsity-practice{
+    display: flex;
+    gap: 20px;
+    overflow: scroll;
+    color: aliceblue;
+    
+}
+
+.varsity-exam{
+ 
+    /* background-image: linear-gradient(rgb(14, 14, 14), rgb(10, 3, 39)); */
+    border: 2px solid #e4e2e280;
+    border-radius: 9px;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.varsity-exam:hover{
+    border: 2px solid #1cab5580;
+}
+
+.varsity-exam h6 {
+    font-size: 20px;
+    font-family: "Work Sans", serif;
+    margin-bottom: 7px;
+    margin-top: 10px;
+    padding-left: 15px;
+}
+
+.Instructor{
+    padding-left: 15px;
+}
+
+.varsity-exam img {
+    height: 180px;
+    width: auto;
+    border-radius: 9px;
+}
+
+.parameters{
+    display: flex;
+    gap :5px;
+    align-items: center;
+    margin-left: 15px;
+}
+.parameters img {
+    height: 17px;
+    width: auto;
+    
+    
+ 
+}
+
+.varsity-admission-button button{
+    font-family: "Hind Siliguri", serif;
+    padding: 5px 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color:#169c4c ;
+    background-color: rgba(255, 255, 255, 0.842) ;
+    border: none;
+    color: rgb(19, 19, 19);
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    border: 2px solid rgba(0, 0, 0, 0.082);
+    cursor: pointer;
+    
+}
+
+.varsity-admission-button button:hover{
+   color:#169c4c ;
+   border : 2px solid #169c4ca1;
+}
+.varsity-admission-button{
+    display: flex;
+    gap:80px;
+    margin-top: 15px;
+    
+}
