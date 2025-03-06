@@ -265,21 +265,21 @@
     <script>
 
         // Login and Register Toggle
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     const urlParams = new URLSearchParams(window.location.search);
-        //     const formType = urlParams.get('form');
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const formType = urlParams.get('form');
 
-        //     const loginForm = document.getElementById('loginForm');
-        //     const registerForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
 
-        //     if (formType === 'register') {
-        //         loginForm.classList.add('hidden');
-        //         registerForm.classList.remove('hidden');
-        //     } else {
-        //         loginForm.classList.remove('hidden');
-        //         registerForm.classList.add('hidden');
-        //     }
-        // });
+            if (formType === 'register') {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+            } else {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            }
+        });
 
         const toggleRegister = document.getElementById('toggleRegister');
         const toggleLogin = document.getElementById('toggleLogin');
