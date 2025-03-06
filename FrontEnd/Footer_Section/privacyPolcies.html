@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রাইভেসি পলিসি - SABAS Online School</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Hind+Siliguri:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        accentcolor: '#179800',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-hind-siliguri {
+            font-family: "Hind Siliguri", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="font-hind-siliguri">
+    <!-- Header Section -->
+    <header>
+        <!-- Navbar -->
+        <nav
+            class="bg-white fixed top-0 w-full border-b-2 border-gray-200 z-50 border-b-2 border-b-accentcolor lg:border-none transition-all duration-300 hover:shadow-lg lg:border-none">
+            <div class="nav-section w-[85.94vw] mx-auto mt-2  mx-0 flex justify-between items-center">
+                <div class="navbar bg-base-100 px-0 flex items-center">
+                    <div class="navbar-start mx-0 ">
+                        <a class="btn btn-ghost text-xl px-0"><img class=" p-0 w-[90px] lg:w-[130px] h-auto"
+                                src="https://i.postimg.cc/9MMLk4xJ/Logo.png" alt=""></a>
+                    </div>
+                    <div class="navbar-center hidden lg:flex lg:mt-2">
+                        <ul class="menu menu-horizontal px-1 text-lg">
+                            <li><a href="index.html">হোম</a></li>
+                            <li><a href="Medical/medical.html">মেডিকেল ব্যাচ</a></li>
+                            <li><a href="Varsity/varsity.html">ভার্সিটি ব্যাচ</a></li>
+                            <li> <a href="Blog/blog.html">ব্লগ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class=" navbar-end">
+                        <!-- Search Button -->
+                        <button id="searchButton" class="Search-box hidden lg:flex btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </button>
+
+                        <div class="button flex lg:gap-2">
+                            <a class="text-black min-h-0 hover:text-white" href="../008_Login_Page/login.html?form=login">
+                                <button class="border-2 border-accentcolor lg:py-2 lg:px-8 px-4 py-1 rounded-lg hover:bg-accentcolor text-sm lg:text-base">লগ ইন</button>
+                            </a>
+                            <a class="text-black min-h-0 hover:text-white" href="../008_Login_Page/login.html?form=register">
+                                <button class="hidden lg:flex border-2 border-accentcolor bg-accentcolor py-2 px-8 rounded-lg hover:bg-[#178A03] text-white">রেজিস্টার</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="toogle  lg:hidden">
+                    <img src="c2-assets/bars-3.png" alt="">
+                </div>
+            </div>
+        </nav>
+
+        <!-- Search Modal -->
+        <div id="searchModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="bg-white p-6 rounded-lg w-11/12 md:w-1/2 lg:w-1/3">
+                    <h2 class="text-xl font-bold mb-4">সার্চ করুন</h2>
+                    <input type="text" id="searchInput" class="w-full px-4 py-2 border rounded-lg mb-4" placeholder="এখানে টাইপ করুন...">
+                    <div id="searchResults" class="text-gray-700"></div>
+                    <button id="closeSearchModal" class="mt-4 bg-accentcolor text-white px-4 py-2 rounded-lg">বন্ধ করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="for mobile lg:hidden">
+            <div
+                class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full p-2 bg-white/80 backdrop-blur-md shadow-lg flex justify-around items-center rounded-t-2xl z-10">
+                <!-- Home -->
+                <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                    <i class="fas fa-home text-lg mb-1"></i>
+                    <span class="text-sm">হোম</span>
+                </a>
+                <!-- Courses -->
+                <a href="mobileCourse.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                    <i class="fas fa-book-open text-lg mb-1"></i>
+                    <span class="text-sm">কোর্সসমূহ</span>
+                </a>
+                <!-- Blog -->
+                <a href="Blog/blog.html" class="flex flex-col items-center text-gray-700 hover:text-accentcolor">
+                    <i class="fas fa-blog text-lg mb-1"></i>
+                    <span class="text-sm">ব্লগ</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mt-24">
+        <!-- Privacy Policy Section -->
+        <section class="privacy-policy container w-[83.94vw] mx-auto mt-12 lg:mt-24">
+            <h1 class="text-2xl lg:text-4xl font-semibold text-center my-8 text-accentcolor ">
+                প্রাইভেসি পলিসি
+            </h1>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">১. ব্যক্তিগত তথ্য সংগ্রহ</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীদের কাছ থেকে নাম, ইমেইল, ফোন নম্বর, ঠিকানা এবং অন্যান্য প্রয়োজনীয় তথ্য সংগ্রহ করা হতে পারে। এই তথ্য শুধুমাত্র সেবা প্রদান এবং যোগাযোগের জন্য ব্যবহৃত হবে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">২. তথ্যের ব্যবহার</h2>
+                <p class="text-gray-600 mb-4">
+                    সংগ্রহকৃত তথ্য শুধুমাত্র ব্যবহারকারীদের সেবা প্রদান, অ্যাকাউন্ট ম্যানেজমেন্ট, এবং প্রমোশনাল অফার পাঠানোর জন্য ব্যবহৃত হবে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৩. তথ্য সংরক্ষণ</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীদের তথ্য নিরাপদ সার্ভারে সংরক্ষণ করা হবে এবং অননুমোদিত প্রবেশ থেকে সুরক্ষিত রাখা হবে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৪. তথ্য শেয়ারিং</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীদের ব্যক্তিগত তথ্য কোনো তৃতীয় পক্ষের সাথে শেয়ার করা হবে না, তবে আইনি বাধ্যবাধকতা বা সেবা প্রদানের প্রয়োজনে শেয়ার করা হতে পারে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৫. কুকিজ এবং ট্র্যাকিং</h2>
+                <p class="text-gray-600 mb-4">
+                    সাইটটি ব্যবহারকারীদের অভিজ্ঞতা উন্নত করতে কুকিজ ব্যবহার করতে পারে। ব্যবহারকারীরা তাদের ব্রাউজার সেটিংস থেকে কুকিজ ম্যানেজ করতে পারেন।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৬. তথ্যের নিরাপত্তা</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীদের তথ্য সুরক্ষিত রাখতে আমরা সর্বোচ্চ নিরাপত্তা ব্যবস্থা গ্রহণ করি। তবে ইন্টারনেটে কোনো তথ্য ১০০% নিরাপদ নয়, তাই ব্যবহারকারীদের সতর্ক থাকতে অনুরোধ করা হচ্ছে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৭. তৃতীয় পক্ষের লিংক</h2>
+                <p class="text-gray-600 mb-4">
+                    সাইটে তৃতীয় পক্ষের লিংক থাকতে পারে। এই লিংকগুলোর প্রাইভেসি পলিসি আমাদের নিয়ন্ত্রণে নেই, তাই ব্যবহারকারীদের সেগুলো ব্যবহারের আগে প্রাইভেসি পলিসি পড়ে নেওয়া উচিত।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৮. তথ্য আপডেট</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীরা তাদের ব্যক্তিগত তথ্য আপডেট বা সংশোধন করতে পারবেন তাদের অ্যাকাউন্ট সেটিংস থেকে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">৯. তথ্য মুছে ফেলা</h2>
+                <p class="text-gray-600 mb-4">
+                    ব্যবহারকারীরা চাইলে তাদের অ্যাকাউন্ট এবং সংরক্ষিত তথ্য মুছে ফেলার জন্য অনুরোধ করতে পারেন। আমরা প্রয়োজনীয় প্রক্রিয়া অনুসরণ করে তথ্য মুছে দেব।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">১০. বাচ্চাদের গোপনীয়তা</h2>
+                <p class="text-gray-600 mb-4">
+                    আমাদের সেবা ১৩ বছরের কম বয়সী বাচ্চাদের জন্য নয়। যদি কোনো বাচ্চার তথ্য সংগ্রহ করা হয়, তবে তা অবিলম্বে মুছে ফেলা হবে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">১১. নীতির পরিবর্তন</h2>
+                <p class="text-gray-600 mb-4">
+                    আমরা প্রাইভেসি পলিসিতে পরিবর্তন আনতে পারি। কোনো পরিবর্তন করা হলে তা সাইটে প্রকাশ করা হবে এবং ব্যবহারকারীদের জানানো হবে।
+                </p>
+
+                <h2 class="text-xl font-semibold mb-4">১২. যোগাযোগ</h2>
+                <p class="text-gray-600 mb-4">
+                    প্রাইভেসি পলিসি সংক্রান্ত কোনো প্রশ্ন বা অভিযোগ থাকলে, ব্যবহারকারীরা আমাদের সাথে যোগাযোগ করতে পারেন প্রদত্ত ইমেইল বা ফোন নম্বরের মাধ্যমে।
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="mt-10 bg-accentcolor">
+        <section class="footer-container container w-[83.94vw] mx-auto py-12 sm:py-20 text-white">
+            <div class="footer grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16 gap-12">
+                <!-- Company -->
+                <div class="company ">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">কোম্পানি</p>
+                    <ul class="text-base lg:text-lg ">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">শিক্ষক হিসাবে যোগ দিন</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">নিয়োগ বিজ্ঞপ্তি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্লগ</a></li>
+                    </ul>
+                </div>
+                <!-- Policies -->
+                <div class="policies">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">পলিসিসমূহ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">প্রাইভেসি পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">রিফান্ড পলিসি</a></li>
+                        <li><a href="#" class="text-gray-100 hover:text-gray-200">ব্যবহারকারীর শর্তাবলি</a></li>
+                    </ul>
+                </div>
+                <!-- Contacts -->
+                <div class="contacts">
+                    <p class="text-lg lg:text-xl font-medium underline mb-4">যোগাযোগ</p>
+                    <ul class="text-base lg:text-lg">
+                        <li class="text-gray-100">হোয়াটসআপঃ +8801813694582</li>
+                        <li class="text-gray-100">কল করুনঃ +8801813694582</li>
+                        <li class="text-gray-100">ইমেইলঃ @support.sabasonlineschool.com</li>
+                    </ul>
+                    <div class="social-icon flex justify-center space-x-6 py-1 mb-24 lg:mb-4">
+                        <!-- Facebook Icon -->
+                        <a href="https://www.facebook.com/SABASEdu/" class=" text-white hover:text-gray-300 transition-colors duration-300">
+                            <svg class="w-5 h-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.234 2.686.234v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+
+                        <!-- Twitter Icon -->
+                        <a href="https://www.facebook.com/SABASEdu/" class="text-white hover:text-gray-300 transition-colors duration-300">
+                            <svg class="w-5 h-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                            </svg>
+                        </a>
+
+                        <!-- Instagram Icon -->
+                        <a href="https://www.facebook.com/SABASEdu/" class="text-white hover:text-gray-300 transition-colors duration-300">
+                            <svg class="w-5 h-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+
+                        <!-- LinkedIn Icon -->
+                        <a href="https://www.facebook.com/SABASEdu/" class="text-white hover:text-gray-300 transition-colors duration-300">
+                            <svg class="w-5 h-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        const searchButton = document.getElementById('searchButton');
+   const searchModal = document.getElementById('searchModal');
+   const closeSearchModal = document.getElementById('closeSearchModal');
+   const searchInput = document.getElementById('searchInput');
+   const searchResults = document.getElementById('searchResults');
+
+   searchButton.addEventListener('click', () => {
+       searchModal.classList.remove('hidden');
+   });
+
+   
+   closeSearchModal.addEventListener('click', () => {
+       searchModal.classList.add('hidden');
+       removeHighlights(); 
+   });
+
+   function removeHighlights() {
+       document.body.querySelectorAll('.highlight').forEach(el => {
+           const parent = el.parentNode;
+           parent.replaceChild(document.createTextNode(el.textContent), el);
+           parent.normalize();
+       });
+   }
+
+   function searchAndScroll(query) {
+       removeHighlights();
+       
+       if (!query) return;
+
+       const treeWalker = document.createTreeWalker(
+           document.body,
+           NodeFilter.SHOW_TEXT,
+           { acceptNode: (node) => 
+               node.textContent.toLowerCase().includes(query.toLowerCase()) 
+               ? NodeFilter.FILTER_ACCEPT 
+               : NodeFilter.FILTER_REJECT 
+           }
+       );
+
+       let firstMatch = null;
+
+       while (treeWalker.nextNode()) {
+           const node = treeWalker.currentNode;
+           const span = document.createElement('span');
+           span.className = 'highlight bg-yellow-200';
+           const newText = node.textContent.replace(
+               new RegExp(query, 'gi'),
+               (match) => `<span class="highlight bg-yellow-200">${match}</span>`
+           );
+           const temp = document.createElement('div');
+           temp.innerHTML = newText;
+           node.replaceWith(...temp.childNodes);
+           
+           if (!firstMatch) {
+               firstMatch = document.querySelector('.highlight');
+           }
+       }
+
+       if (firstMatch) {
+           firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+           searchResults.innerHTML = '<p class="text-green-600">ম্যাচ পাওয়া গেছে!</p>';
+       } else {
+           searchResults.innerHTML = '<p class="text-red-500">কোনো ম্যাচ নেই</p>';
+       }
+   }
+
+   searchInput.addEventListener('input', (e) => {
+       const query = e.target.value.trim();
+       searchAndScroll(query);
+   });
+   </script>
+</body>
+
+</html>
